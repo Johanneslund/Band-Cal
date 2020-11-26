@@ -3,6 +3,7 @@ const path = require("path");
 const dbRouter = require("./routes/db.js");
 const spotifyRouter = require("./routes/spotify.js")
 const bodyparser = require("body-parser");
+const lyricsRouter = require("./routes/lyrics.js")
     
 // Instansera express
 const app = express();
@@ -18,6 +19,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Använd router
 app.use("/api/db", dbRouter);
 app.use("/api/spotify", spotifyRouter);
+app.use("/api/lyrics", lyricsRouter);
     
 // Port för anslutning
 const port = process.env.PORT || 3000;

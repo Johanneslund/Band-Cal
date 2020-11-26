@@ -79,7 +79,7 @@ router.get("/artist=:artist", async (req, res) => {
     
 });
 
-router.get("/user=:user", async (req, res) => {
+router.get("/userPlaylist=:user", async (req, res) => {
     if(!spotifyApi.getAccessToken()){
         await authenticate();
     }
