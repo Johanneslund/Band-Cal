@@ -2,8 +2,8 @@
 //Importering
 const express = require("express");
 const path = require("path");
-const dbRouter = require("routes/dB");
-const spotifyRouter = require("/")
+const dbRouter = require("./routes/dB");
+const spotifyRouter = require("./routes/spotify")
 const bodyparser = require("body-parser");
 const lyricsRouter = require("./routes/lyrics")
 const mongoose = require("mongoose");
@@ -30,7 +30,6 @@ app.all('/*', function (req, res, next) {
 // Använd bodyparser
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
-
     
 // Skapa statisk sökväg
 app.use(express.static(path.join(__dirname, 'public')));
