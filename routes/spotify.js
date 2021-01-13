@@ -3,13 +3,15 @@ const router = express.Router();
 const SpotifyWebApi = require("spotify-web-api-node");
 const credentials = require("../data/credentials.json");
 
+//Använder inte denna alls så kommer inte att gå igenom den i min presentation
+
+//Skapar en ny api
 const spotifyApi = new SpotifyWebApi({
     clientId: credentials.clientId,
     clientSecret: credentials.clientSecret
 });
 
-// Client Credential grejs, servern autenticerar sig mot spotify då det behövs.
-// Får en access token
+// Client Credential och autentisering vid behov. Får acces token
 const authenticate = async() => {
     await spotifyApi.clientCredentialsGrant()
     .then((data) => {
@@ -20,9 +22,6 @@ const authenticate = async() => {
         console.log("Sumtin done goofed... error: " + err);
     }
 }
-
-// Alla calls kollar efter en access token först, finns den inte körs autenticerare. Sen söka
-// mot spotify, returnera outputen
 
 // Sök artist och spår från artist
 router.get("/artist=:artist&track=:track", async (req, res) => {
@@ -79,6 +78,7 @@ router.get("/artist=:artist", async (req, res) => {
     
 });
 
+//Hämtar alla spellistor från en specifik user
 router.get("/userPlaylist=:user", async (req, res) => {
     if(!spotifyApi.getAccessToken()){
         await authenticate();
