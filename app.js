@@ -1,10 +1,9 @@
 
 //Importering
-require("dotenv").config();
 const express = require("express");
 const path = require("path");
-const dbRouter = require("./routes/dB");
-const spotifyRouter = require("./routes/spotify")
+const dbRouter = require("routes/dB");
+const spotifyRouter = require("/")
 const bodyparser = require("body-parser");
 const lyricsRouter = require("./routes/lyrics")
 const mongoose = require("mongoose");
