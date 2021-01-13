@@ -2,10 +2,10 @@
 //Importering
 const express = require("express");
 const path = require("path");
-const dbRouter = require("./routes/db.js");
-const spotifyRouter = require("./routes/spotify.js")
+const dbRouter = require("./routes/dB");
+const spotifyRouter = require("./routes/spotify")
 const bodyparser = require("body-parser");
-const lyricsRouter = require("./routes/lyrics.js")
+const lyricsRouter = require("./routes/lyrics")
 const mongoose = require("mongoose");
     
 // Instansera express
