@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const https = require("https");
 
+
+//Hämtar och returnerar låttext om den finns.
 router.get("/artist=:artist&track=:track", (req, res) => {
 
     let artist = req.params.artist;
@@ -16,7 +18,6 @@ router.get("/artist=:artist&track=:track", (req, res) => {
         })
         resp.on("end", () => res.send(body));
     });
-
 });
 
 module.exports = router;
