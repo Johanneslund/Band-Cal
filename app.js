@@ -12,7 +12,7 @@ const mongoose = require("mongoose");
 const app = express();
 
 //Ansluta till DB
-mongoose.connect("mongodb+srv://admin:admin@dt162g.pjhtd.mongodb.net/Band-cal?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect("Removed", { useNewUrlParser: true, useUnifiedTopology: true });
 
 
 //Middleware
